@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180060660-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-180060660-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV PERMATA NIZA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <meta name="description" content="CV Permata Niza | Toko Buku Bojonegoro">
+    <script src="https://kit.fontawesome.com/5db6df9848.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <span><img width="40px" src="img/logo.png" alt="logo"><strong>CV Permata Niza</strong></span>
+        <div class="burger"
+            onclick="this.classList.toggle('burger-x'); document.querySelector('.nav-menu').classList.toggle('links-show')">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-menu">
+            <a>Beranda</a>
+            <a>Layanan</a>
+            <a>Katalog</a>
+            <a>Kontak</a>
+        </div>
+    </nav>
+    <main id="beranda">
+        <div class="left">
+                <img style="width: calc(48px + 5vw);" src="img/logo.png" alt="logo" style="margin-right: 20px">
+                <!-- <div style="display: flex; flex-direction: column;"> -->
+                <!-- <h1>CV PERMATA NIZA</h1> -->
+                <!-- <p>Melayani Kebutuhan Sekolah Anda</p> -->
+                <!-- </div> -->
+
+            <h1 style="margin: 20px 0; font-weight: 200;"> Menyediakan <span>Buku</span> dan <br> <span>Peralatan
+                    Sekolah</span>
+                dengan <br> <span>Harga</span> dan <span>Kualitas</span> Terjamin.</h1>
+            <div class="siplah">
+                <p>Kunjungi Toko Kami</p>
+                <!-- <a href="https://siplah.blibli.com/search?itemPerPage=40&page=0&merchantId=SCPN-0002"><img
+                        src="img/siplah-blibli.png" alt="SipLah BliBli"></a> -->
+                <a href="https://siplah.blanja.com/store/6231-cv-permata-niza?parent_dtids=all"><img
+                        src="img/siplah-blanja.png" alt="Siplah Blanja"></a>
+            </div>
+        </div>
+        <div class="right">
+            <img width="500px" src="img/book-illustration.svg"
+                attr="Business vector created by pch.vector - www.freepik.com" alt="Book Illustration">
+        </div>
+        <img src="img/bg.svg" alt="background" class="background">
+
+        <div class="more">
+            <ul>
+                <li><i class="fas fa-shipping-fast fa-3x"></i></li>
+                <li>Gratis Ongkir</li>
+            </ul>
+            <ul>
+                <li><i class="fas fa-file-invoice-dollar fa-3x"></i></li>
+                <li>Transaksi Aman</li>
+            </ul>
+            <ul>
+                <li><img style="width: calc(44px + 6vw);" src="img/siplah-hitam.png" alt="Siplah Logo"></li>
+                <li>Terintegrasi SIPLah</li>
+            </ul>
+        </div>
+    </main>
+    <section id="layanan">
+        <div class="overlay">
+            <h1>Kami Menyediakan</h1>
+            <div>
+                <ul>
+                    <li><i class="fas fa-5x fa-book-reader"></i></li>
+                    <li>BUKU KURIKULUM 2013</li>
+                    <li>SD, SMP, SMA / sederajat</li>
+                </ul>
+                <ul>
+                    <li><i class="fas fa-5x fa-book"></i></li>
+                    <li>BUKU PENDAMPING</li>
+                    <li>KURIKULUM 2013</li>
+                </ul>
+                <ul>
+                    <li><i class="fas fa-5x fa-book-open"></i></li>
+                    <li>BUKU PERPUSTAKAAN</li>
+                    <li>Agama, Kerajinan, Masakan, Keterampilan, Komputer, dll</li>
+                </ul>
+                <ul>
+                    <li><i class="fas fa-5x fa-laptop"></i></li>
+                    <li>KOMPUTER, LAPTOP, dan</li>
+                    <li>Alat Peraga Pendidikan</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <h1 style="border-color: #333333;">Katalog Produk</h1>
+    <div class="katalog-menu">
+        <form id="search-form"><input type="text" placeholder="Cari Buku" onkeydown="setFilter(0,'', this.value)"><button type="submit"><i class="fas fa-search"></i></button></form>
+        <select name="kategori" id="kategori" onchange="setFilter(0, this.value)">
+            <option value="Siswa">Buku Siswa</option>
+            <option value="Guru">Buku Guru</option>
+            <option value="Perpustakaan">Buku Perpustakaan</option>
+            <option value="">Semua</option>
+        </select>
+    </div>
+    <img src="./img/loading.gif" id="loading" style="margin: auto; display: block;">
+
+        <div id="katalog"></div>
+
+        <div class="halaman">
+            Halaman　
+            <a onclick="setFilter(-8, selectedOption.value, searchInput.value)"><i class="fas fa-arrow-circle-left"></i></a>
+            <span></span>
+            <a onclick="setFilter(8, selectedOption.value, searchInput.value)"><i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+
+    </section>
+    <section id="kontak">
+        <h1 style="border-color: #333333;">Hubungi Kami</h1>
+        <div id="contact">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.596018693403!2d111.90325981462408!3d-7.172608872375653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7781435269f44f%3A0xda313d6b34723a24!2sCV.%20Permata%20Niza!5e0!3m2!1sen!2sjp!4v1601345838277!5m2!1sen!2sjp"
+            height="500" frameborder="0" style="border:0;" allowfullscreen="" 
+            tabindex="0"></iframe>
+
+        <!-- <form method="POST">
+            <label for="username">Nama</label>
+            <input type="text" name="username" id="username">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="message">Pesan</label>
+            <textarea name="message" id="message" cols="30" rows="4"></textarea>
+            <br><br>
+            <button type="submit" name="submit" id="submit">Kirim</button>
+        </form> -->
+    </div>
+    </section>
+
+    <footer>
+        <img width="50px" src="img/logo.png" alt="logo">
+        <ul>
+            </li>
+            <li><strong>CV Permata Niza</strong></li>
+            <li>Perum. Bojonegoro Permai Q19 RT05/RW03 Tikusan Kapas Bojonegoro</li>
+            <li>〒 62181</li>
+        </ul>
+        <ul>
+            <li>Kontak</li>
+            <li><i class="fab fa-whatsapp"></i>085235322377</li>
+            <li><i class="fas fa-envelope"></i>cv.permataniza@gmail.com
+            </li>
+        </ul>
+        <ul>
+            <li>SIPLah</li>
+            <!-- <a href="https://siplah.blibli.com/search?itemPerPage=40&page=0&merchantId=SCPN-0002"><img
+                    src="img/siplah-blibli.png" alt="SipLah BliBli"></a> -->
+            <a href="https://siplah.blanja.com/store/6231-cv-permata-niza?parent_dtids=all"><img
+                    src="img/siplah-blanja.png" alt="Siplah Blanja"></a>
+            </li>
+        </ul>
+    </footer>
+    <a href="https://api.whatsapp.com/send?phone=6285235322377" class="whatsapp"><i
+            class="fab fa-3x fa-whatsapp"></i></a>
+
+    <!-- <script src="data.js"></script> -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
