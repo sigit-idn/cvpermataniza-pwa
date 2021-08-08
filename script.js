@@ -1,3 +1,32 @@
+window.addEventListener('load', event => navigator.serviceWorker?.register('service-worker.js'))
+
+setTimeout(() => divInstall.classList.remove('hidden'), 10000)
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  console.log('👍', 'beforeinstallprompt', event);
+  window.deferredPrompt = event;
+  divInstall.classList.toggle('hidden', false);
+});
+
+butInstall.addEventListener('click', async () => {
+  console.log('👍', 'butInstall-clicked');
+  const promptEvent = window.deferredPrompt;
+  if (!promptEvent) {
+    return;
+  }
+  promptEvent.prompt();
+  const result = await promptEvent.userChoice;
+  console.log('👍', 'userChoice', result);
+  window.deferredPrompt = null;
+  divInstall.classList.toggle('hidden', true);
+});
+
+window.addEventListener('appinstalled', (event) => {
+  console.log('👍', 'appinstalled', event);
+  window.deferredPrompt = null;
+  divInstall.classList.add('hidden');
+});
+
 const selectedOption = document.getElementById("kategori");
 const searchInput = document.querySelector("#search-form input");
 let firstData = 0;
@@ -94,7 +123,7 @@ const switchDetail = (button) => {
         document.querySelectorAll("#katalog *").forEach(katalogItem => katalogItem.style.transform = 'scale(0)')
         
         document
-        .querySelectorAll(".desc, br, table, .hidden")
+        .querySelectorAll(".desc, br, table, #katalog .hidden")
         .forEach((desc) => (desc.style.display = !isDetail ? "block" : "none"));
         // alert('percobaan kedua puluh tiga')
 

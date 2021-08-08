@@ -1,0 +1,16 @@
+{
+    "name"              : "CV Permata Niza | Menjual Buku dan Peralatan Sekolah",
+    "short_name"        : "Permata Niza",
+    "icons"             : [
+        {
+            "src" : "./img/logo.png",
+            "type": "image/png",
+            "sizes" : "504x496"
+        }
+    ],
+    "start_url"         : "index.html",
+    "background_color"  : "#5BA4C9",
+    "display"           : "standalone",
+    "scope"             : "/",
+    "theme_color"       : "#5BA4C9"
+}

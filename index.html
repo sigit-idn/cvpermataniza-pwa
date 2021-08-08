@@ -20,7 +20,8 @@
     <meta name="description" content="CV Permata Niza | Toko Buku Bojonegoro">
     <script src="https://kit.fontawesome.com/5db6df9848.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#5BA4C9">
 </head>
 
 <body>
@@ -176,6 +177,11 @@
     </footer>
     <a href="https://api.whatsapp.com/send?phone=6285235322377" class="whatsapp"><i
             class="fab fa-3x fa-whatsapp"></i></a>
+    <div id="divInstall" class="hidden">
+        <p>Install Aplikasi CV Permata Niza di perangkat Anda?</p>
+        <button id="butInstall">Install</button>
+        <button onclick="this.parentElement.classList.add('hidden')">Batal</button>
+    </div>
 
     <!-- <script src="data.js"></script> -->
     <script src="script.js"></script>
